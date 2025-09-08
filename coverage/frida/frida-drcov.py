@@ -36,12 +36,7 @@ var whitelist = %s;
 var threadlist = %s;
 
 // Get the module map
-function make_maps() {
-    return Process.enumerateModulesSync();
-}
-
-var maps = make_maps()
-
+var maps = Process.enumerateModulesSync();
 send({'map': maps});
 
 // We want to use frida's ModuleMap to create DRcov events, however frida's
